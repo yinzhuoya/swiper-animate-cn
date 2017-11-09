@@ -1,6 +1,6 @@
 # swiper-animate-cn
 - Swiper Animate is Swiper Chinese network to provide for the widget to quickly create CSS3 animations within Swiper, suitable for Swiper2.x and Swiper3.x. This plugin does not work in loop mode
-- Swiper Animate是Swiper中文网提供的用于在Swiper内快速制作CSS3动画效果的小插件，适用于Swiper2.x和Swiper3.x 。
+- Swiper Animate是Swiper中文网提供的用于在Swiper内快速制作CSS3动画效果的小插件，适用于Swiper2.x,Swiper3.x和Swiper4.x 。
 此插件不适用于loop模式
 
 1. 引入模块
@@ -13,14 +13,28 @@ var clearSwiperAnimate = require('swiper-animate').clearSwiperAnimate;
 2. 初始化
 ```
 <script>        
+//Swiper3.x、Swiper2.x
   var mySwiper = new Swiper ('.swiper-container', {
-  onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
-    swiperAnimateCache(swiper); //隐藏动画元素 
-    swiperAnimate(swiper); //初始化完成开始动画
-  }, 
-  onSlideChangeEnd: function(swiper){ 
-    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
-  } 
+    onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+      swiperAnimateCache(swiper); //隐藏动画元素 
+      swiperAnimate(swiper); //初始化完成开始动画
+    }, 
+    onSlideChangeEnd: function(swiper){ 
+      swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+    } 
+  }) 
+
+//Swiper4.x
+  var mySwiper = new Swiper ('.swiper-container', {
+    on:{
+      init: function(){
+        swiperAnimateCache(this); //隐藏动画元素 
+        swiperAnimate(this); //初始化完成开始动画
+      }, 
+      slideChange: function(){ 
+        swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+      } 
+    }
   })        
 </script>
   ```
