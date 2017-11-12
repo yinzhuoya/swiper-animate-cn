@@ -5,10 +5,10 @@
 
 1. 引入模块
 ```
-require('swiper-animate/animate.min.css')
-var swiperAnimateCache = require('swiper-animate').swiperAnimateCache;
-var swiperAnimate = require('swiper-animate').swiperAnimate;
-var clearSwiperAnimate = require('swiper-animate').clearSwiperAnimate;
+require('swiper-animate-cn/animate.min.css')
+var swiperAnimateCache = require('swiper-animate-cn').swiperAnimateCache;
+var swiperAnimate = require('swiper-animate-cn').swiperAnimate;
+var clearSwiperAnimate = require('swiper-animate-cn').clearSwiperAnimate;
 ```
 2. 初始化
 ```
